@@ -21,9 +21,9 @@ type ToolSpec struct {
 }
 
 type ResourceSpec struct {
-	Resource        *mcp.Resource
+	Resource         *mcp.Resource
 	ResourceTemplate *mcp.ResourceTemplate
-	Handler         ResourceHandler
+	Handler          ResourceHandler
 }
 
 type PromptSpec struct {

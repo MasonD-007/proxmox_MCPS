@@ -83,13 +83,13 @@ func TestNodeLookup(t *testing.T) {
 	m.Method = "GET"
 	m.Reply(200).JSON(map[string]any{
 		"data": map[string]any{
-			"cpu":     0.05,
-			"maxcpu":  8,
-			"maxmem":  34359738368,
-			"mem":     8589934592,
-			"node":    "pve",
-			"status":  "online",
-			"uptime":  123456,
+			"cpu":    0.05,
+			"maxcpu": 8,
+			"maxmem": 34359738368,
+			"mem":    8589934592,
+			"node":   "pve",
+			"status": "online",
+			"uptime": 123456,
 		},
 	})
 

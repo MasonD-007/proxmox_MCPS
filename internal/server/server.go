@@ -101,7 +101,9 @@ func runHTTP(ctx context.Context, srv *mcp.Server, addr string, logger *slog.Log
 		<-ctx.Done()
 		shutdownCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 		defer cancel()
-		httpSrv.Shutdown(shutdownCtx)
+		if err := httpSrv.Shutdown(shutdownCtx); err != nil {
+			logger.Warn("HTTP shutdown error", "err", err)
+		}
 	}()
 
 	logger.Info("starting HTTP transport", "addr", addr)
